@@ -1,6 +1,6 @@
 README
-Wong, Kinsleigh
 Badger, Sam
+Wong, Kinsleigh
 
 Database name: pauseitive
 The administrator username is "Admin" and the password is "1234".
@@ -11,6 +11,7 @@ So our project is a clothing store. You can create an account by clicking on "Re
 LOGIN EXTRA FUNCTIONALITY
 You can browse the inventory only when you are logged in, and it is done by pressing the "Shop Now" tab on the top. 
 You can also only view the shopping cart when you are logged in, and it gives you the option to empty your cart or remove all of one item. Also, it will only allow you to checkout if there is actually something in the cart.
+When you checkout, you are asked to enter sensitive info such as credit card information and your address. Since the regex would be too complicated and would go beyond the scope of this class, there is no check for it. Also, we don't want you to actually give us your info. 
 
 DATABASE
 Our database contains a table for users and their info, a table for the products, unused table tags and product_tags(these are for personal project use), and tables for shopping cart and transactions, both which happen to use JOIN. 
