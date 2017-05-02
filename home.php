@@ -46,7 +46,7 @@
                     require_once('./database.php');
                     if(isset($_POST["login"]) || isset($_SESSION["login_failed"])){
                         if (isset($_SESSION["login_failed"])){
-                            print("Invalid Login. please Try again.");
+                            print("<div id = 'centerit'>Invalid Login. please Try again.</div>");
                             unset($_SESSION["login_failed"]);
                         }
                         require_once("./login.php");

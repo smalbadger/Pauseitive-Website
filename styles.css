@@ -307,3 +307,14 @@ fieldset label{
 .cokeline{
     display: inline-block;
 }
+
+#centerit{
+	padding: 2em;
+	padding-bottom: 1.5em;
+	font-weight: bold;
+	font-size: 1em;
+    left: -60%;
+    text-align: center;
+    vertical-align: middle;
+    height: 30px;
+}
