@@ -5,7 +5,7 @@
     { 
         session_start(); 
     } 
-    if (isset($_POST["remove"])){
+    if (isset($_POST["remove"])){ //This handles removing things from shopping cart. 
         $myDatabaseFunctions->removeFromShoppingCart($_POST["id"]);
 
         print('
@@ -19,7 +19,7 @@
         </script>
         ');
     }
-    if(isset($_POST["empty"])){
+    if(isset($_POST["empty"])){ //this handles emptying their shopping cart. 
         $myDatabaseFunctions->EmptyShoppingCart($_SESSION["User"]["User_Name"]);
         print('
         <form id="form1" action="home.php" method="post">
@@ -32,7 +32,7 @@
         ');
     }
     
-    if (isset($_POST["Buy"])){
+    if (isset($_POST["Buy"])){ //this handles the user adding something to their cart. 
         $myDatabaseFunctions->addToShoppingCart($_SESSION["User"]["User_Name"], $_POST["id"]);
 
         print('
@@ -45,7 +45,7 @@
         </script>
         ');
     }
-    else{
+    else{//All the stuff below handles printing out the shopping cart. 
         ?>
         <h1>Shopping Cart</h1>
         <div class = "shopitem">
@@ -88,6 +88,7 @@
     <input type="hidden" name="total" value=<?=$total?>>
     <input type="hidden" name="user" value=<?= $_SESSION['User']['User_Name']?>>
     <?php
+    //If the cart is empty for the user, we do not want them to be able to checkout. 
     if($myDatabaseFunctions->CartIsEmpty($_SESSION['User']['User_Name'])){
     ?>
         <br/><br/>
