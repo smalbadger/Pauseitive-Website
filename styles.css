@@ -1,0 +1,295 @@
+body{
+    margin:0;
+    height: 100vh;
+    position: relative;
+    font-family: sans-serif;
+}
+
+header{
+    height:auto;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: monospace;
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+}
+
+nav{
+    text-align: center;
+}
+
+button{
+    margin-left:3%;
+    margin-right:3%;
+}
+
+#main {
+    margin-top: 30px;
+    width: 70%;
+    margin: auto;
+    background-color: #141111;
+    background: linear-gradient(to bottom, rgba(200, 200, 200,.8), rgba(100, 100, 100, .9));
+    overflow: hidden;
+}
+
+#fixed-bg {
+    background-image:url("homeless_03.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    overflow: auto; /*for some reason this makes it so the background cant move*/
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+fieldset{
+    width:90%;
+    margin: auto;
+    border: 1px solid rgb(45, 45, 45);
+    background-color: rgba(0, 0, 0,.7);
+}
+
+fieldset p{
+    color: rgb(201, 201, 201);
+}
+fieldset label{
+    color: rgb(201, 201, 201);
+}
+fieldset h3{
+    color: rgb(201, 201, 201);
+}
+
+#lefty{
+    float: left;
+    width: 50%;
+    text-align: right;
+}
+
+#righty{
+    padding-top: 10px;
+    float: left;
+    width: 50%;
+    align-items: center;
+}
+
+input, select{
+    padding: 0px;
+    margin: 7px;
+}
+
+p{
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+label{
+    margin-left: 3px;
+    margin-right: 0px;
+    padding: 0px;
+}
+
+.topall{
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+input[type=submit] {
+    background-color: rgb(200, 200, 200);
+    border: none;
+    border-radius: 5px;
+    color: black;
+    text-decoration: none;
+    font: serif;
+    padding: 5px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #797979;
+}
+
+tr:hover {
+    background-color: #5d5c5c;
+    color: #e2e1e1;
+}
+
+th, td{
+    border-bottom: 1px solid #46403f;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#total{
+    display: block;
+    float: right;
+}
+
+#footer{
+    padding-bottom: 5px;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 69%;
+    background-color: rgb(67, 67, 67);
+    color: rgb(130,130,130);
+}
+
+.cred{
+    padding:5px;
+}
+
+.left{
+    float: left;
+    text-align: left;
+    width: 40%;
+}
+
+.right{
+    float: left;
+    text-align: right;
+    width: 40%;
+}
+
+.mid{
+    float: left;
+    text-align: center;
+    width: 20%;
+}
+
+#manage-products th:nth-child(1){
+    max-height: 100px;
+}
+
+#manage-products th:nth-child(5){
+    max-height: 100px;
+}
+
+#manage-products tr{
+    /*width: 25%;*/
+}
+
+#manage-products td{
+    width: 15%;
+}
+
+.table-image{
+    height: 100px;
+}
+
+/*The styling below controls the shopping cart.*/
+.shopitem{
+    text-align: center;
+}
+
+.test{
+    height: 300px;
+    width: auto;
+    text-align: center;
+}
+
+.shoppic{
+    float: left;
+    padding-left: 5%;
+    height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+}
+
+.shoptext{
+    width: 30%;
+    vertical-align: middle;
+    font-size: 1.5em;
+    float: right;
+    padding-top: 12%;
+    padding-right: 5%;
+}
+/*End shopping cart styling*/
+
+/*This controls the register page*/
+.purchaseContainer{
+    margin-left: auto; margin-right: auto;
+    width:60%;
+    padding: 5em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    border: 1px solid rgb(45, 45, 45);
+    background-color: rgba(0, 0, 0,.7);
+}
+
+fieldset .buttonsubmit{
+    height: 10px;
+    padding: 2em;
+    left: -60%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+fieldset label{
+    color: rgb(201, 201, 201);
+}
+
+
+.heading{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15em;
+}
+
+.heading1{
+    display: inline-block;
+    margin-left: 30%;
+    margin-right: auto;
+    width: 8em;
+}
+/*End register/login styling.*/
+
+/*The styling below controls the shopping page. */
+.items{
+    /*background: linear-gradient(to bottom, rgba(255, 255, 255,0.5), rgba(255,255,255,1));*/
+}
+
+.item{
+    margin-top: 1vw;
+    margin-bottom: 40vw;
+    height: 50vh;
+    padding: 2em;
+    left: -60%;
+    text-align: center;
+    vertical-align: middle;
+    height: 50px;
+}
+
+.itemtext{
+    height: 50vh;
+    padding: 2em;
+    left: -60%;
+    text-align: center;
+    vertical-align: middle;
+    height: 50px;
+}
+.pic{
+    height: auto; 
+    width: auto; 
+    max-width: 500px; 
+    max-height: 500px;
+}
+
+.itemprice{
+    font-size: 2em;
+}
+/*Shopping styling end*/
