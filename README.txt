@@ -13,11 +13,11 @@ You can browse the inventory only when you are logged in, and it is done by pres
 You can also only view the shopping cart when you are logged in, and it gives you the option to empty your cart or remove all of one item. Also, it will only allow you to checkout if there is actually something in the cart.
 
 DATABASE
-Our database contains a table for users and their info, a table for the products, an unused table tags (this is for personal project use), and tables for shopping cart and transactions, both which happen to use JOIN. 
+Our database contains a table for users and their info, a table for the products, unused table tags and product_tags(these are for personal project use), and tables for shopping cart and transactions, both which happen to use JOIN. 
 
 ADMIN REPORT
 The admin account lets you see the admin report that lists the purchases the user had made. 
-It also gives you the option of adding/removing an item to the shop, you can try this out with out by adding "test.jpg", using characters for the name and a number for price. You can try to remove a project with remove. 
+It also gives you the option of adding/removing an item to the shop, you can try this out with out by adding "test.jpg", using characters for the name and a number for price. You can try to remove a product with remove. 
 
 ETC
 About Us and Contact Us are "flavor text" so to speak.
