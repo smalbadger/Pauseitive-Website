@@ -38,7 +38,7 @@ function ajaxCompleted(ajax) {
 	console.log(resp.User_Name);
 	var stat = "";
 	if (resp.User_Name){
-		stat = "Name " + resp.User_Name + " is in use as ID " + resp.User_ID;
+		stat = "Name " + resp.User_Name + " is in use.";
 		$("username_status").textContent = stat;
 		$("username_status").style.color = "#ff6666";
 		$("username").style.backgroundColor="#ff6666";

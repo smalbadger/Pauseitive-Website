@@ -3,22 +3,39 @@
     $user = $_POST["user"];
 ?>
 <h1>Check Out</h1>
-<fieldset>
-    <div id = "righty">
-        <form action="home.php" method="post">
+<form action="home.php" method="post">
+<fieldset class="purchaseContainer2">
             <h3>Address</h3>
-            <label>Street: <input type="text" name="street" required="required"/></label><br/>
-            <label>City: <input type="text" name="city" required="required"/></label><br/>
-            <label>State: <input type="text" name="state" required="required"/></label><br/>
-            <label>ZIP: <input type="text" name="zip" required="required"/></label><br/>
-            <label>Country: <input type="text" name="country" required="required"/></label><br/>
+            <label class = "heading" for = "street">Street:</label>
+            <input type="text" name="street"/>
+            <br/>
+            <label class = "heading" for = "city">City:</label>
+            <input type="text" name="city"/>
+            <br/>
+            <label class = "heading" for = "state">State:</label>
+            <input type="text" name="state"/>
+            <br/>
+            <label class = "heading" for="zip">ZIP:</label>
+            <input type="text" name="zip"/>
+            <br/>
+            <label class = "heading" for="country">Country:</label>
+            <input type="text" name="country"/>
+            <br/>
+
             <h3>Billing Information</h3>
-            <label>Credit Card Number: <input type="text" name="cc" required="required"/></label><br/>
-            <label>CSV Security Code: <input type="text" name="csv" required="required"/></label><br/>
-            <label>Expiration Date: <input type="text" name="exp" required="required"/></label><br/>
-            <input type="hidden" name="total" value=<?=$total?> required="required"/>
+            <label class = "heading" for="cc">Credit Card Number:</label>
+            <input type="text" name="cc"/>
+            <br/>
+            <label class = "heading" for="csv">CSV Security Code:</label>
+			<input type="text" name="csv"/>
+            <br/>
+            <label class = "heading" for="exp">Expiration Date: </label>
+			<input type="text" name="exp"/>
+            <br/>
+            <input type="hidden" name="total" value=<?=$total?>>
             <input type="hidden" name="type" value="PURCHASE" required="required"/>
             <input type="submit" name="order" value="purchase" required="required"/>
-        </form>
-    </div>
+            <div class="buttonsubmit">
+            <input type="submit" name="order" value="Purchase"/> </div>
 </fieldset>
+</form>

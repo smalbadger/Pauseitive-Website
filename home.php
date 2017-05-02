@@ -67,7 +67,7 @@
                         require_once("./register.php");
                     }
                     else if(isset($_POST["logout"])){
-                        print("<h1>Bye, ".$_SESSION["User"]["First_Name"]."</h1>");
+                        print("<h1>Bye, ".$_SESSION["User"]["First_Name"].".</h1>");
                         session_destroy();
                     }
                     else if(isset($_POST["cart"])){

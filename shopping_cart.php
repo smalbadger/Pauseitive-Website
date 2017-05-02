@@ -1,9 +1,10 @@
 <?php
+    print("<h1>Shopping Cart</h1>");
     require_once('database.php');
-    if(!isset($_SESSION))
-    {
-        session_start();
-    }
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
     if (isset($_POST["remove"])){
         $myDatabaseFunctions->removeFromShoppingCart($_POST["id"]);
 
@@ -43,11 +44,9 @@
             document.getElementById("form1").submit();
         </script>
         ');
-        //header('Location: http://localhost/final_project/home.php');
     }
     else{
         ?>
-        <h1>Shopping Cart</h1>
         <div class = "shopitem">
             <form action="shopping_cart.php" method="post">
                 <input type="hidden" name="user" value=<?= $_SESSION['User']['User_Name']?>>
@@ -87,6 +86,13 @@
 <form action="home.php" method="post">
     <input type="hidden" name="total" value=<?=$total?>>
     <input type="hidden" name="user" value=<?= $_SESSION['User']['User_Name']?>>
-    <input type="submit" name="checkout" value="checkout">
+    <?php
+    if($myDatabaseFunctions->CartIsEmpty($_SESSION['User']['User_Name'])){
+    ?>
+        <br/><br/>
+        <p>Your shopping cart is empty. </p>
+    <?php } else { ?>
+        <input type="submit" name="checkout" value="Checkout">
+     <?php } ?>
 </form>
 </div>

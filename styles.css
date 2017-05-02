@@ -142,7 +142,7 @@ th, td{
     overflow: hidden;
     position: fixed;
     bottom: 0;
-    width: 69%;
+    width: 69.38%;
     background-color: rgb(67, 67, 67);
     color: rgb(130,130,130);
 }
@@ -230,6 +230,16 @@ th, td{
     background-color: rgba(0, 0, 0,.7);
 }
 
+.purchaseContainer2{
+    margin-left: auto; margin-right: auto;
+    width: 35%;
+    padding: 5em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    border: 1px solid rgb(45, 45, 45);
+    background-color: rgba(0, 0, 0,.7);
+}
+
 fieldset .buttonsubmit{
     height: 10px;
     padding: 2em;
@@ -293,3 +303,7 @@ fieldset label{
     font-size: 2em;
 }
 /*Shopping styling end*/
+
+.cokeline{
+    display: inline-block;
+}

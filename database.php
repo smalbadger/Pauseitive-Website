@@ -12,7 +12,7 @@
             $password = '';
 
             try {
-                $this->DB = new PDO('mysql:dbname=pauseitive;host=localhost', $user, $password);
+                $this->DB = new PDO('mysql:dbname=pauseitive;host=127.0.0.1', $user, $password);
                 $this->DB->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
             }
             catch(PDOException $e){
@@ -65,8 +65,8 @@
             $stmt = $this->DB->prepare ( "DELETE FROM products WHERE Product_ID = '$id';");
             $stmt->execute ();
         }
-
-        /* This function is a repeat, commented out.
+        
+        /* This function is a repeat, commented out. 
         public function addToCart($userid, $itemid){
             $stmt = $this->DB->prepare("INSERT INTO shopping_cart values(NULL, :userid, :itemid");
                 $stmt->bindParam( 'userid', $userid );
@@ -80,24 +80,18 @@
             return $stmt->fetchAll (PDO::FETCH_ASSOC);
         }
 
-        public function addDonation($amount, $card){
-            $stmt = $this->DB->prepare("INSERT INTO transactions VALUES(NULL, 'DONATION', NULL,NULL,NULL,:card,now(),'PROCESSED');");
-            $stmt->bindParam("card",$card);
-            $stmt->execute();
-        }
-
         public function addToShoppingCart($User_Name, $Product_ID){
             $check =  $this->DB->prepare("SELECT * FROM shopping_cart WHERE (User_Name = '$User_Name') AND (Product_ID = $Product_ID);");
             $check->execute ();
             $check = $check->fetchAll (PDO::FETCH_ASSOC);
 
             if(count($check) == 0){
-                $stmt = $this->DB->prepare('INSERT INTO shopping_cart values(NULL, :User_Name, :Product_ID, 1);');
+                $stmt = $this->DB->prepare('INSERT INTO shopping_cart values(NULL, :User_Name, :Product_ID, 1)');
                 $stmt->bindParam( 'User_Name', $User_Name );
                 $stmt->bindParam( 'Product_ID', $Product_ID );
                 $stmt->execute();
             } else {
-                $stmt = $this->DB->prepare ("UPDATE shopping_cart SET Product_Count = Product_Count + 1 WHERE (User_Name = :User_Name) AND (Product_ID = :Product_ID);");
+                $stmt = $this->DB->prepare ("UPDATE shopping_cart SET Product_Count = Product_Count + 1 WHERE (User_Name = :User_Name) AND (Product_ID = :Product_ID)");
                 $stmt->bindParam( 'User_Name', $User_Name );
                 $stmt->bindParam( 'Product_ID', $Product_ID );
                 $stmt->execute ();
@@ -137,19 +131,39 @@
 
         public function EmptyShoppingCart($username){
             $stmt = $this->DB->prepare("DELETE FROM shopping_cart WHERE User_Name = '$username';");
+            $stmt->bindParam('User_Name', $username);
             $stmt->execute();
+        }
+
+        /*This function returns a Boolean indicating whether or not a user's cart is empty.*/
+        public function CartIsEmpty($username){
+            $check = $this->DB->prepare("SELECT * FROM shopping_cart WHERE User_Name = '$username';");
+            $check->bindParam('User_Name', $username);
+            $check->execute();
+            $check = $check->fetchAll (PDO::FETCH_ASSOC);
+            if(count($check) == 0){
+                return True;
+            } else {
+                return False;
+            }
         }
 
         public function findUsernameMatch($name) {
     		# Set up database query
-    		$statement = $this->DB->prepare("SELECT User_Name, User_ID FROM users WHERE User_Name = :name;");
-    		$statement->bindParam('name', $name);
+    		$statement = $this->DB->prepare("SELECT User_Name, User_ID FROM users WHERE User_Name = :nomen;");
+    		$statement->bindParam('nomen', $name);
     		$statement->execute();
     		$row = $statement->fetch(PDO::FETCH_ASSOC); # row might be empty
     		$row['status'] = 'success'; # this makes sure row stores something
     		return json_encode($row);
 
 	    }
+
+        public function addDonation($amount, $card){
+            $stmt = $this->DB->prepare("INSERT INTO transactions VALUES(NULL, 'DONATION', NULL,NULL,NULL,:card,now(),'PROCESSED');");
+            $stmt->bindParam("card",$card);
+            $stmt->execute();
+        }
     }
 
 # Query on the given username (if any).
@@ -159,8 +173,8 @@ if (isset($_POST['name'])) {
 	$base = new DatabaseAdapter();
 	echo $base->findUsernameMatch($_POST['name']);
 }
-// else {
-// 	header($_SERVER['SERVER_PROTOCOL'] . ' 400 Invalid Request');
-// }
+else {
+	header($_SERVER['SERVER_PROTOCOL'] . ' 400 Invalid Request');
+}
     $myDatabaseFunctions = new DatabaseAdapter();
 ?>

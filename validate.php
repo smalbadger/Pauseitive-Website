@@ -49,5 +49,5 @@
             $_SESSION["login_failed"] = 1;
         }
     }
-    header('Location: http://localhost/FinalFusion/home.php');
+    header('Location: ./home.php');
 ?>
