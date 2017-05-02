@@ -18,9 +18,8 @@
 --
 -- Current Database: `pauseitive`
 --
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `pauseitive` /*!40100 DEFAULT CHARACTER SET latin1 */;
-
+DROP DATABASE IF EXISTS `pauseitive`;
+CREATE DATABASE `pauseitive` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `pauseitive`;
 
 --
