@@ -58,7 +58,7 @@
         $total = 0.00;
         $shopping_cart = $myDatabaseFunctions->getShoppingCart($_SESSION["User"]["User_Name"]);
         foreach($shopping_cart as $item){
-            $total += $item["Product_Price"];
+            $total += $item["Product_Price"] * $item["Product_Count"];
         ?>
         <br/><br/>
 
