@@ -1,6 +1,9 @@
 <?php
+//This file displays a table of transactions for the administrator's eyes openssl_csr_get_public_key
     print("<h1>Administrator Report</h1>");
     require_once('./database.php');
+
+    //get all of the transactions joined with the users.
     $transactions = $myDatabaseFunctions->getTransactions();
     $total = 0.00;
     print("<table>");
@@ -17,6 +20,8 @@
         <th>Price</th>
     </tr>
     ");
+
+    //print all of the transactions in table form
     foreach($transactions as $t){
         if(isset($t['Product_Price'])){
             $price = $t["Product_Price"];
