@@ -70,7 +70,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (6,'Three Quarters Sleeves Tee ',24.99,'three_quarters_mens_tee_20.jpg',0),(7,'Sweater',29.99,'sweater.jpg',0),(8,'Kid\'s Tee',14.99,'kids_tee.jpg',0),(9,'Hoodie',34.99,'hoodie.jpg',0),(10,'Long Sleeve Tee',24.99,'long_sleeve.jpg',0),(11,'Women\'s Black Tee',19.99,'womens_tee_black.jpg',0),(12,'Women\'s Gray Tee',19.99,'womens_tee_gray.jpg',0),(13,'Women\'s White Tee',19.99,'womens_tee_white.jpg',0),(14,'Men\'s Black Tee',19.99,'mens_tee_black.jpg',0),(15,'Men\'s Gray Tee',19.99,'mens_tee_gray.jpg',0),(17,'Men\'s White Tee',19.99,'mens_tee_white.jpg',0),(19,'dildo',99.99,'dildo.jpg',0);
+INSERT INTO `products` VALUES (6,'Three Quarters Sleeves Tee ',24.99,'three_quarters_mens_tee_20.jpg',0),(7,'Sweater',29.99,'sweater.jpg',0),(8,'Kid\'s Tee',14.99,'kids_tee.jpg',0),(9,'Hoodie',34.99,'hoodie.jpg',0),(10,'Long Sleeve Tee',24.99,'long_sleeve.jpg',0),(11,'Women\'s Black Tee',19.99,'womens_tee_black.jpg',0),(12,'Women\'s Gray Tee',19.99,'womens_tee_gray.jpg',0),(13,'Women\'s White Tee',19.99,'womens_tee_white.jpg',0),(15,'Men\'s Gray Tee',19.99,'mens_tee_gray.jpg',0),(17,'Men\'s White Tee',19.99,'mens_tee_white.jpg',0);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
