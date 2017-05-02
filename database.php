@@ -65,8 +65,8 @@
             $stmt = $this->DB->prepare ( "DELETE FROM products WHERE Product_ID = '$id';");
             $stmt->execute ();
         }
-        
-        /* This function is a repeat, commented out. 
+
+        /* This function is a repeat, commented out.
         public function addToCart($userid, $itemid){
             $stmt = $this->DB->prepare("INSERT INTO shopping_cart values(NULL, :userid, :itemid");
                 $stmt->bindParam( 'userid', $userid );
@@ -107,13 +107,15 @@
             //print_r($cart);
             foreach($cart as $trans){
                 //print_r($trans);
-                $p_id = $trans['Product_ID'];
-                $u_name = $trans['User_Name'];
+                for($i=0;$i<$trans["Product_Count"];$i++){
+                    $p_id = $trans['Product_ID'];
+                    $u_name = $trans['User_Name'];
 
-                $stmt = $this->DB->prepare("INSERT INTO transactions VALUES(NULL,'PURCHASE', '$p_id', '$u_name', :address, :creditcard, now(),'UNPROCESSED');");
-                $stmt->bindParam( 'address',$address);
-                $stmt->bindParam( 'creditcard',$card);
-                $stmt->execute();
+                    $stmt = $this->DB->prepare("INSERT INTO transactions VALUES(NULL,'PURCHASE', '$p_id', '$u_name', :address, :creditcard, now(),'UNPROCESSED');");
+                    $stmt->bindParam( 'address',$address);
+                    $stmt->bindParam( 'creditcard',$card);
+                    $stmt->execute();
+                }
             }
         }
 
