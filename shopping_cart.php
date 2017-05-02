@@ -1,5 +1,5 @@
 <?php
-    print("<h1>Shopping Cart</h1>");
+    
     require_once('database.php');
     if(!isset($_SESSION)) 
     { 
@@ -31,7 +31,7 @@
         </script>
         ');
     }
-
+    
     if (isset($_POST["Buy"])){
         $myDatabaseFunctions->addToShoppingCart($_SESSION["User"]["User_Name"], $_POST["id"]);
 
@@ -47,6 +47,7 @@
     }
     else{
         ?>
+        <h1>Shopping Cart</h1>
         <div class = "shopitem">
             <form action="shopping_cart.php" method="post">
                 <input type="hidden" name="user" value=<?= $_SESSION['User']['User_Name']?>>
