@@ -41,12 +41,14 @@
             $stmt->execute();
         }
 
+        //This function gets all the products as an array. 
         public function getItemsArray() {
             $stmt = $this->DB->prepare ( "SELECT * FROM products");
             $stmt->execute ();
             return $stmt->fetchAll (PDO::FETCH_ASSOC);
         }
 
+        //This function adds a product to the product table. 
         public function addProduct($name, $price, $path){
             $stmt = $this->DB->prepare("SELECT * FROM products WHERE Product_Name=:name;");
             $stmt->bindParam('name',$name);
@@ -61,6 +63,7 @@
             }
         }
 
+        //This function removes a product from the table. 
         public function removeProduct($id){
             $stmt = $this->DB->prepare ( "DELETE FROM products WHERE Product_ID = '$id';");
             $stmt->execute ();
@@ -74,18 +77,20 @@
                 $stmt->execute();
         }*/
 
+        //This function returns the shopping cart as an array. 
         public function getShoppingCart($username){
             $stmt = $this->DB->prepare("SELECT * FROM shopping_cart s JOIN products p ON s.Product_ID = p.Product_ID WHERE User_Name = '$username';");
             $stmt->execute();
             return $stmt->fetchAll (PDO::FETCH_ASSOC);
         }
 
+        //This function adds a user and the product they are buying to the shopping cart or increments what they're buying. 
         public function addToShoppingCart($User_Name, $Product_ID){
             $check =  $this->DB->prepare("SELECT * FROM shopping_cart WHERE (User_Name = '$User_Name') AND (Product_ID = $Product_ID);");
             $check->execute ();
             $check = $check->fetchAll (PDO::FETCH_ASSOC);
 
-            if(count($check) == 0){
+            if(count($check) == 0){ //If the user has not added the item to the cart previously,
                 $stmt = $this->DB->prepare('INSERT INTO shopping_cart values(NULL, :User_Name, :Product_ID, 1)');
                 $stmt->bindParam( 'User_Name', $User_Name );
                 $stmt->bindParam( 'Product_ID', $Product_ID );
@@ -98,11 +103,13 @@
             }
         }
 
+        //This function removes from the shopping cart. 
         public function removeFromShoppingCart($id){
             $stmt = $this->DB->prepare("DELETE FROM shopping_cart WHERE Cart_ID = $id;");
             $stmt->execute();
         }
 
+        //This function adds a transaction to the admin report. 
         public function addTransactions($cart, $address, $card){
             //print_r($cart);
             foreach($cart as $trans){
@@ -119,6 +126,7 @@
             }
         }
 
+        //This function gets all the transactions for the admin report. 
         public function getTransactions(){
             $stmt = $this->DB->prepare("SELECT * FROM transactions t JOIN products p ON p.Product_ID = t.Product_ID;");
             $stmt->execute();
@@ -131,13 +139,14 @@
             return array_merge($purchases,$donations);
         }
 
+        //This function removes all the items in the shopping cart for the user. 
         public function EmptyShoppingCart($username){
             $stmt = $this->DB->prepare("DELETE FROM shopping_cart WHERE User_Name = '$username';");
             $stmt->bindParam('User_Name', $username);
             $stmt->execute();
         }
 
-        /*This function returns a Boolean indicating whether or not a user's cart is empty.*/
+        //This function returns a Boolean indicating whether or not a user's cart is empty.
         public function CartIsEmpty($username){
             $check = $this->DB->prepare("SELECT * FROM shopping_cart WHERE User_Name = '$username';");
             $check->bindParam('User_Name', $username);
@@ -150,6 +159,7 @@
             }
         }
 
+        //This function finds if the username exists in the database.
         public function findUsernameMatch($name) {
     		# Set up database query
     		$statement = $this->DB->prepare("SELECT User_Name, User_ID FROM users WHERE User_Name = :nomen;");
@@ -161,6 +171,7 @@
 
 	    }
 
+        //This function handles donations. 
         public function addDonation($amount, $card){
             $stmt = $this->DB->prepare("INSERT INTO transactions VALUES(NULL, 'DONATION', NULL,NULL,NULL,:card,now(),'PROCESSED');");
             $stmt->bindParam("card",$card);
