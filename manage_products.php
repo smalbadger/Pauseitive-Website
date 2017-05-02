@@ -1,7 +1,11 @@
 <?php
     require_once('./database.php');
+
+    //gets all of the products from the products database.
     $products = $myDatabaseFunctions->getItemsArray();
     $i = 1;
+
+    //gives option to add a product
     print('
     <fieldset>
         <form action="home.php" method="post">
@@ -13,6 +17,8 @@
     </fieldset>
     ');
     print('<br />');
+
+    //print all of the products in the products table and give option to delete each one.
     print("<table id='manage-products'>");
     print("
     <tr>
