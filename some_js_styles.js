@@ -33,9 +33,6 @@ function clear(parentId) {
 // (Merge AJAX response into current page.)
 function ajaxCompleted(ajax) {
 	var resp = JSON.parse(ajax.responseText);
-	console.log(ajax.responseText);
-	console.log(resp);
-	console.log(resp.User_Name);
 	var stat = "";
 	if (resp.User_Name){
 		stat = "Name " + resp.User_Name + " is in use.";
@@ -55,13 +52,11 @@ function ajaxCompleted(ajax) {
 // Callback function if AJAX fails or results are unreadable.
 // If it did not work, show why.
 function ajaxFailed(ajax) {
-    console.log(ajax);
 	$('errors').textContent = ajax.status + " " + ajax.statusText;
     $('errors').style.color = "red";
 }
 
 function ajaxExcept(ajax) {
-    console.log(ajax);
 	$('errors').textContent = ajax.status + " " + ajax.statusText;
     $('errors').style.color = "red";
 }
