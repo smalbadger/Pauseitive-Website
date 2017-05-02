@@ -34,8 +34,6 @@
             <br/>
             <input type="hidden" name="total" value=<?=$total?>>
             <input type="hidden" name="type" value="PURCHASE" required="required"/>
-            <input type="submit" name="order" value="purchase" required="required"/>
-            <div class="buttonsubmit">
-            <input type="submit" name="order" value="Purchase"/> </div>
+            <div class="buttonsubmit"> <input type="submit" name="order" value="Purchase"/> </div>
 </fieldset>
 </form>

@@ -26,10 +26,10 @@
                                 print('<input type="submit" name="shop" value="Shop Now"/>');
                                 print('<input type="submit" name="cart" value="Shopping Cart"/>');
                             }
-                            print('<input type="submit" name="logout" value="Log out"/>');
+                            print('<input type="submit" name="logout" value="Log Out"/>');
                         }
                         else{
-                            print('<input type="submit" name="login" value="Log in"/>');
+                            print('<input type="submit" name="login" value="Log In"/>');
                             print('<input type="submit" name="register" value="Register"/>');
                         }
                     ?>
