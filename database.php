@@ -184,7 +184,7 @@ if (isset($_POST['name'])) {
 	# Specify that the output will be JSON.
 	header('Content-Type: application/json');
 	$base = new DatabaseAdapter();
-	$base->findUsernameMatch($_POST['name']);
+	echo $base->findUsernameMatch($_POST['name']);
 }
 // else {
 // 	header($_SERVER['SERVER_PROTOCOL'] . ' 400 Invalid Request');
