@@ -18,7 +18,7 @@ Our database contains a table for users and their info, a table for the products
 
 ADMIN REPORT
 The admin account lets you see the admin report that lists the purchases the user had made. 
-It also gives you the option of adding/removing an item to the shop, you can try this out with out by adding "test.jpg", using characters for the name and a number for price. You can try to remove a product with remove. 
+It also gives you the option of adding/removing an item to the shop, you can try this out by adding "test.jpg", using characters for the name and a number (max is $999.99) for the price. You can try to remove a product with remove. The only restriction is that the image must be in the folder of the project.
 
 ETC
 About Us and Contact Us are "flavor text" so to speak.
