@@ -178,7 +178,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (4,'Admin','Administrator','VIP',0,'admin@pauseitive.com','$2y$10$nq/7KaSh4MSdoLS6OBzEjewLOLhRtHlczq0wP2D4vI4YdKQRbHZWC','2017-04-29 16:32:58','ADMINISTRATOR'),(5,'smalbadger','Sam','Badger',0,'smalbadger@email.arizona.edu','$2y$10$7QW2dXRq.hEelfWO6r1ZOOt3eK7MKQoGv.sQMJec8LdaQhZZYoPym','2017-04-29 17:57:51','CUSTOMER'),(6,'s','Sam','Badger',0,'s@email.com','$2y$10$MZB94D2dVRFa8OYGx2.3QeGWABlge0HGTwmr8CjGG5VOE4Dn6T..O','2017-04-30 23:16:13','CUSTOMER'),(7,'SamGisGay','Sam','Gardner',0,'samGisGay@gaypeople.com','$2y$10$fS06vcLrIGldLeP3r2I/HOmW8Nff1Gy3wKW6jecDDE8E77Hzm7Kd2','2017-04-30 23:37:36','CUSTOMER'),(8,'nic','Nic','E',0,'nic@nic.com','$2y$10$UZEvrxdVc1eiSRINwWTiuOzkR9SaW6uEdrmAQlNYBDHmpJ0i6oM92','2017-05-01 12:02:01','CUSTOMER');
+INSERT INTO `users` VALUES (4,'Admin','Administrator','VIP',0,'admin@pauseitive.com','$2y$10$nq/7KaSh4MSdoLS6OBzEjewLOLhRtHlczq0wP2D4vI4YdKQRbHZWC','2017-04-29 16:32:58','ADMINISTRATOR');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
